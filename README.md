@@ -1,2 +1,2 @@
-# google_news_scrapper
+# Google News Scrapper
 Web scrapping API used to retrieve news from Google.
