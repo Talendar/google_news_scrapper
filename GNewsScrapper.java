@@ -136,7 +136,7 @@ public class GNewsScrapper implements Runnable
     }
 
 	
-	/**
+    /**
      * Returns a list with the search results.
      */
     public List<SearchItem> getSearchResults() {
