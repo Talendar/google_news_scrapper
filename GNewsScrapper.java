@@ -33,8 +33,7 @@ public class GNewsScrapper implements Runnable
      * @param runnable callback function; called when the search is finished.
      * @param searchTerms search terms to be used in the search.
      */
-    public GNewsScrapper(String language, Runnable runnable, String... searchTerms)
-    {
+    public GNewsScrapper(String language, Runnable runnable, String... searchTerms) {
         if(searchTerms.length == 0)
             throw new IllegalArgumentException();
 
@@ -75,23 +74,17 @@ public class GNewsScrapper implements Runnable
         }
 
         public String getLink() { return this.link; }
-
         public String getTitle() { return title; }
-
         public String getDescription() { return description; }
-
         public String getAuthor() { return author; }
-
         public String getAge() { return age; }
-
     }
 
 
     /**
-     * Mounts the URL to be used for the search.
+     * Mounts the URL to be used in the search.
      */
-    private String mountURL()
-    {
+    private String mountURL() {
         StringBuilder url = new StringBuilder(GNEWS_BASE_URL);
         for(String s: this.searchTerms) {
             url.append(s).append("+");
@@ -111,10 +104,8 @@ public class GNewsScrapper implements Runnable
      * Executes the search.
      */
     @Override
-    public void run()
-    {
-        try
-        {
+    public void run() {
+        try {
             Document doc = Jsoup.connect(this.mountURL()).get();
             Elements elements = doc.select("div[class=dbsr]");
 
